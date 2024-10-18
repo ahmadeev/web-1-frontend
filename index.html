@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>meow</title>
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <button type="submit" onclick="submitButton()">Submit</button>
+  </div>
+
+  <script>
+    function submitButton() {
+      $.ajax({
+        url: '/fcgi-bin/server.jar',
+        method: 'get',
+        dataType: 'html',
+        data: {coolTest : "test0", coolId : "id12345"},
+        success: function(data){
+          alert(data)
+          console.log(data)
+          $('body').html(data)
+        },
+        error: (jqXHR, textStatus, errorThrown) => {
+          alert('meow')
+          alert("Error: " + textStatus + ", " + errorThrown);
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
