@@ -1,5 +1,7 @@
 function insert(data) {
+    console.log("начало функции")
     window.localStorage.setItem(stringCounter, data);
+    console.log("объект добавлен в сессию")
     var obj = JSON.parse(window.localStorage.getItem(stringCounter));
     var tableRow = document.getElementById('resultTable').insertRow(stringCounter);
 
@@ -19,6 +21,7 @@ function insert(data) {
 
     stringCounter += 1
     window.localStorage.setItem('stringCounter', stringCounter)
+    console.log("объект добавлен")
 }
 
 stringCounter = 1;
@@ -39,8 +42,8 @@ $("#form").on("submit", function(){
 
         $.ajax({
             url: '/fcgi-bin/server.jar',
-            method: 'post',
-            dataType: 'html',
+            method: 'get',
+            dataType: 'text',
             data: data,
             success: function(data){
                 alert(data)
