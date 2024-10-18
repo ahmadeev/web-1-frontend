@@ -2,7 +2,7 @@ body {
     background-color: #24190f;
 }
 
-#header, #content_left, #contentRight, #contentCenter {
+#header, #contentLeft, #contentRight, #contentCenter {
     margin-bottom: 5px;
 }
 
@@ -17,7 +17,7 @@ div#container div {
     background: #f0e5db;
 }
 
-#content_left, #contentRight {
+#contentLeft, #contentRight {
     width: 50%;
     height: 300px;
 }
@@ -39,7 +39,7 @@ div#container div {
     justify-content: center;
 }
 
-#content_left {
+#contentLeft {
     float: left;
 }
 
@@ -80,18 +80,18 @@ form {
     margin-top: 25px
 }
 
-.form_line {
+.formLine {
     float: left;
     margin-left: 85px;
     width: 100%;
     height: 28px;
 }
 
-.radio_1 {
+.radio1 {
     width: 20px;
 
 }
-.radio_2, .radio_3 {
+.radio2, .radio3 {
     width: 20px;
     margin-left: 30px;
 }
