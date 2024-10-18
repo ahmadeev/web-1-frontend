@@ -1,7 +1,7 @@
 function insert(data) {
-    console.log("начало функции")
+    console.log("Начало выполнения функции вставки строки в таблицу")
     window.localStorage.setItem(stringCounter, data);
-    console.log("объект добавлен в сессию")
+    console.log("Объект 'точка' добавлен в сессию")
     var obj = JSON.parse(window.localStorage.getItem(stringCounter));
     var tableRow = document.getElementById('resultTable').insertRow(stringCounter);
 
@@ -17,15 +17,16 @@ function insert(data) {
     RValue.innerHTML = obj.R;
     isHit.innerHTML = obj.isHit;
 
-    var currentDate = new Date()
-    var currentTimeString = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds()
+    // var currentDate = new Date()
+    // var currentTimeString = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds()
+    // currentTime.innerHTML = currentTimeString;
 
-    currentTime.innerHTML = currentTimeString;
+    currentTime.innerHTML = "" + obj.currentTime;
     scriptExecutionTime.innerHTML = "" + obj.scriptTime;
 
     stringCounter += 1
     window.localStorage.setItem('stringCounter', stringCounter)
-    console.log("объект добавлен")
+    console.log("Успешное выполнение вставки строки в таблицу")
 }
 
 stringCounter = 1;
