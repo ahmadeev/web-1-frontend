@@ -1,10 +1,6 @@
 function insert(data) {
     window.localStorage.setItem(stringCounter, data);
-    //var obj = JSON.parse(data);
-    //alert(window.localStorage.getItem(stringCounter))
     var obj = JSON.parse(window.localStorage.getItem(stringCounter));
-    //var table = document.getElementById('resultTable')
-    //if (stringCounter == 15) {table.deleteRow(1); stringCounter -= 1};
     var tableRow = document.getElementById('resultTable').insertRow(stringCounter);
 
 
@@ -16,7 +12,6 @@ function insert(data) {
     var scriptExecutionTime = tableRow.insertCell(5);
     xValue.innerHTML = obj.x;
     yValue.innerHTML = obj.y;
-    //yValue.innerHTML = parseFloat(obj.y).toFixed(2);
     RValue.innerHTML = obj.R;
     isHit.innerHTML = obj.isHit;
     currentTime.innerHTML = obj.currentTime;
@@ -43,12 +38,16 @@ $("#form").on("submit", function(){
         var data = {'xType': xValue, 'yType': yValue, 'RType': i}
 
         $.ajax({
-            url: 'server/validate.php',
+            url: '/fcgi-bin/server.jar',
             method: 'post',
             dataType: 'html',
             data: data,
             success: function(data){
+                alert(data)
                 insert(data)        
+            },
+            error: (jqXHR, textStatus, errorThrown) => {
+                alert("Error: " + textStatus + ", " + errorThrown);
             }
         });
     }
