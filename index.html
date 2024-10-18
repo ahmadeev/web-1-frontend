@@ -22,11 +22,9 @@
         data: {coolTest : "test0", coolId : "id12345"},
         success: function(data){
           alert(data)
-          console.log(data)
           $('body').html(data)
         },
         error: (jqXHR, textStatus, errorThrown) => {
-          alert('meow')
           alert("Error: " + textStatus + ", " + errorThrown);
         }
       });
