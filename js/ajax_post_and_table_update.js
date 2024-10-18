@@ -16,8 +16,12 @@ function insert(data) {
     yValue.innerHTML = obj.y;
     RValue.innerHTML = obj.R;
     isHit.innerHTML = obj.isHit;
-    currentTime.innerHTML = obj.currentTime;
-    scriptExecutionTime.innerHTML = obj.scriptTime;
+
+    var currentDate = new Date()
+    var currentTimeString = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds()
+
+    currentTime.innerHTML = currentTimeString;
+    scriptExecutionTime.innerHTML = "" + obj.scriptTime;
 
     stringCounter += 1
     window.localStorage.setItem('stringCounter', stringCounter)
