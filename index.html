@@ -14,57 +14,65 @@
   <div id="header">
     <h2>Akhmadeev Danis P3309 #367839</h2>
   </div>
+
   <div class="main_content">
     <div id="content_left">
 
       <form method="post" id="form" action="/fcgi-bin/server.jar">
         <div class="form_line"><label>x value:</label></div>
+
         <div class="form_line">
-
-          <label><input type="radio" class="radio1" name="xType" value="-3" />-3</label>
-          <label><input type="radio" class="radio2" name="xType" value="0" />0</label>
-          <label><input type="radio" class="radio3" name="xType" value="3" />3</label>
-
-
+          <label><input type="radio" class="radio_1_1" name="xType" value="-3" />-3</label>
+          <label><input type="radio" class="radio_1_2" name="xType" value="0" />0</label>
+          <label><input type="radio" class="radio_1_3" name="xType" value="3" />3</label>
         </div>
+
         <div class="form_line">
-          <label><input type="radio" class="radio1" name="xType" value="-2" />-2</label>
-          <label><input type="radio" class="radio2" name="xType" value="1" />1</label>
-          <label><input type="radio" class="radio3" name="xType" value="4" />4</label>
-
-
+          <label><input type="radio" class="radio_1_1" name="xType" value="-2" />-2</label>
+          <label><input type="radio" class="radio_1_2" name="xType" value="1" />1</label>
+          <label><input type="radio" class="radio_1_3" name="xType" value="4" />4</label>
         </div>
+
         <div class="form_line">
-          <label><input type="radio" class="radio1" name="xType" value="-1" />-1</label>
-          <label><input type="radio" class="radio2" name="xType" value="2" />2</label>
-          <label><input type="radio" class="radio3" name="xType" value="5" />5</label>
-
-
-
+          <label><input type="radio" class="radio_1_1" name="xType" value="-1" />-1</label>
+          <label><input type="radio" class="radio_1_2" name="xType" value="2" />2</label>
+          <label><input type="radio" class="radio_1_3" name="xType" value="5" />5</label>
         </div>
-        <div class="form_line"><label>y value:</label></div>
+
+        <div class="form_line"><label for="text_box_1">y value:</label></div>
+
         <div class="form_line">
-
-          <input type="textbox" id="textingtext" name="yType" placeholder="-5 to 3" maxlength="10" autocomplete="off"> <!-- 17 -->
+          <input type="text" id="text_box_1" name="yType" placeholder="-3 to 3" maxlength="10" autocomplete="off"> <!-- 17 -->
         </div>
+
         <div class="form_line"><label>R value:</label></div>
-        <div class="form_line">
 
-          <input type="checkbox" name="RType" value="1">
-          <label for="checkbox1">1</label>
-          <input type="checkbox" name="RType" value="2">
-          <label for="checkbox2">2</label>
-          <input type="checkbox" name="RType" value="3">
-          <label for="checkbox3">3</label>
-          <input type="checkbox" name="RType" value="4">
-          <label for="checkbox4">4</label>
-          <input type="checkbox" name="RType" value="5">
-          <label for="checkbox5">5</label>
+        <div class="form_line">
+          <input type="checkbox" id="checkbox_1" name="RType" value="1">
+          <label for="checkbox_1">1</label>
+          <input type="checkbox" id="checkbox_2" name="RType" value="2">
+          <label for="checkbox_2">2</label>
+          <input type="checkbox" id="checkbox_3" name="RType" value="3">
+          <label for="checkbox_3">3</label>
+          <input type="checkbox" id="checkbox_4" name="RType" value="4">
+          <label for="checkbox_4">4</label>
+          <input type="checkbox" id="checkbox_5" name="RType" value="5">
+          <label for="checkbox_5">5</label>
         </div>
+
+<!--        <div class="form_line">-->
+<!--          <label><input type="radio" class="radio_2_1" name="RType" value="1" />1</label>-->
+<!--          <label><input type="radio" class="radio_2_2" name="RType" value="2" />2</label>-->
+<!--          <label><input type="radio" class="radio_2_3" name="RType" value="3" />3</label>-->
+<!--          <label><input type="radio" class="radio_2_4" name="RType" value="4" />4</label>-->
+<!--          <label><input type="radio" class="radio_2_5" name="RType" value="5" />5</label>-->
+<!--        </div>-->
+
         <div class="form_line">
           <button type="submit" disabled="" id="submitButton" name="submitButton">Submit</button>
           <button type="reset" onclick="disableButton()" id="resetButton" name="resetButton">Reset</button>
         </div>
+
       </form>
 
     </div>
@@ -118,7 +126,8 @@
 
   </div>
   <div id="content_center">
-    <table align="center" id="resultTable">
+
+    <table align="center" id="result_table">
       <thead>
       <tr>
         <th style="width:40px">x</th>
@@ -130,8 +139,8 @@
       </tr>
       </thead>
     </table>
-  </div>
 
+  </div>
 
 </div>
 
@@ -139,46 +148,7 @@
 <script src="js/validate_text_input.js"></script>
 <script src="js/refresh_table.js"></script>
 
-<script>
-
-</script>
+<script></script>
 
 </body>
 </html>
-
-
-<!--<!doctype html>-->
-<!--<html class="no-js" lang="">-->
-
-<!--<head>-->
-<!--  <meta charset="utf-8">-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
-<!--  <title>meow</title>-->
-<!--  <script type="text/javascript" src="./js/jquery.min.js"></script>-->
-<!--</head>-->
-
-<!--<body>-->
-<!--  <div>-->
-<!--    <button type="submit" onclick="submitButton()">Submit</button>-->
-<!--  </div>-->
-
-<!--  <script>-->
-<!--    function submitButton() {-->
-<!--      $.ajax({-->
-<!--        url: '/fcgi-bin/server.jar',-->
-<!--        method: 'get',-->
-<!--        dataType: 'html',-->
-<!--        data: {coolTest : "test0", coolId : "id12345"},-->
-<!--        success: function(data){-->
-<!--          alert(data)-->
-<!--          $('body').html(data)-->
-<!--        },-->
-<!--        error: (jqXHR, textStatus, errorThrown) => {-->
-<!--          alert("Error: " + textStatus + ", " + errorThrown);-->
-<!--        }-->
-<!--      });-->
-<!--    }-->
-<!--  </script>-->
-<!--</body>-->
-
-<!--</html>-->

@@ -5,7 +5,7 @@ function insert(data) {
     window.localStorage.setItem(stringCounter, data);
     console.log("Объект 'точка' добавлен в сессию")
     var obj = JSON.parse(window.localStorage.getItem(stringCounter));
-    var tableRow = document.getElementById('resultTable').insertRow(stringCounter);
+    var tableRow = document.getElementById('result_table').insertRow(stringCounter);
 
     var xValue = tableRow.insertCell(0);
 	var yValue = tableRow.insertCell(1);

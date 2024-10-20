@@ -66,12 +66,12 @@ div#container div {
     padding-top: 15px;
 }
 
-#resultTable {
+#result_table {
     border-collapse: collapse;
     background-color: #ffffff;
 }
 
-#resultTable th, #resultTable td {
+#result_table th, #result_table td {
     border: 1px solid black;
     text-align: center;
 }
@@ -87,11 +87,11 @@ form {
     height: 28px;
 }
 
-.radio1 {
+.radio_1_1 {
     width: 20px;
 
 }
-.radio2, .radio3 {
+.radio_1_2, .radio_1_3 {
     width: 20px;
     margin-left: 30px;
 }

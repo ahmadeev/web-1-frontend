@@ -5,7 +5,7 @@ function disableButton() {
     submitButton.setAttribute("disabled", "")
     window.localStorage.clear()
     for (var i = 1; i != stringCounter; i++) {
-        var table = document.getElementById('resultTable')
+        var table = document.getElementById('result_table')
         table.deleteRow(1)
         stringCounter = 1
         window.localStorage.setItem('stringCounter', stringCounter)
