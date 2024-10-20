@@ -30,13 +30,18 @@ function form_path_string(d) {
 
 //----------------------------------------тут задаются треугольник и четырехугольник
 let polygon_points = {
-    1: form_polygon_string([ZERO_ZERO, ZERO_R, R_ZERO]),
-    2: form_polygon_string([ZERO_ZERO, ZERO_MINUS_R, `${CENTER + R / 2}, ${CENTER + R}`, HALF_R_ZERO]),
+    2: form_polygon_string([ZERO_ZERO, HALF_R_ZERO, ZERO_MINUS_R]),
+    3: form_polygon_string([ZERO_ZERO, ZERO_MINUS_HALF_R, `${CENTER - R}, ${CENTER + R / 2}`, MINUS_R_ZERO]),
 }
 
 //----------------------------------------тут задается четверть круга
 let path_points = {
-    3: form_path_string({"L":MINUS_HALF_R_ZERO, "A":`${R / 2}, ${R / 2}`, "ANGLE":"0", "END":ZERO_MINUS_HALF_R}),
+    1: form_path_string({
+        "L"     : HALF_R_ZERO,
+        "A"     : `${R / 2}, ${R / 2}`,
+        "ANGLE" : "0",
+        "END"   : ZERO_HALF_R
+    }),
 }
 
 //  функция отрисовки графика
@@ -46,6 +51,7 @@ function draw_graph(svg, polygon_points, path_points) {
     let stroke_color = "black"
 
     // Рисуем ось X (горизонтальная линия)
+    //  .x-grid
     const xGrid = document.createElementNS(svgNS, "line");
     xGrid.setAttribute("stroke", "black");
     xGrid.setAttribute("x1", "0");
@@ -55,6 +61,7 @@ function draw_graph(svg, polygon_points, path_points) {
     svg.appendChild(xGrid);
 
     // Рисуем ось Y (вертикальная линия)
+    //  .y-grid
     const yGrid = document.createElementNS(svgNS, "line");
     yGrid.setAttribute("stroke", "black");
     yGrid.setAttribute("x1", "125");
@@ -64,6 +71,7 @@ function draw_graph(svg, polygon_points, path_points) {
     svg.appendChild(yGrid);
 
     // Добавляем подписи осей
+    //  .grid-labels
     const yLabel = document.createElementNS(svgNS, "text");
     yLabel.setAttribute("x", "135");
     yLabel.setAttribute("y", "15");
@@ -109,6 +117,7 @@ function draw_graph(svg, polygon_points, path_points) {
     }
 
     // Рисуем метки на оси X
+    //  .labels .x-labels
     const labelsX = [
         { x: 45, y: 140, text: "-R" },
         { x: 85, y: 140, text: "-R/2" },
@@ -125,6 +134,7 @@ function draw_graph(svg, polygon_points, path_points) {
     });
 
     // Рисуем метки на оси Y
+    //  .labels .y-labels
     const labelsY = [
         { x: 130, y: 205, text: "-R" },
         { x: 130, y: 165, text: "-R/2" },
@@ -141,6 +151,7 @@ function draw_graph(svg, polygon_points, path_points) {
     });
 
     // Рисуем горизонтальные деления (метки оси Y)
+    //  .pridumaupozhe
     const yTicks = [205, 165, 85, 45];
     yTicks.forEach(y => {
         const line = document.createElementNS(svgNS, "line");
@@ -153,6 +164,7 @@ function draw_graph(svg, polygon_points, path_points) {
     });
 
     // Рисуем вертикальные деления (метки оси X)
+    //  .pridumaupozhe
     const xTicks = [205, 165, 85, 45];
     xTicks.forEach(x => {
         const line = document.createElementNS(svgNS, "line");
