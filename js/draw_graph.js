@@ -18,7 +18,7 @@ function form_polygon_string(points) {
     return points.join(" ")
 }
 
-//  points = [ point_L, point_A, angle, point_end ]; point = [ "x1,y1", "r,r", "90,0,0", "x2,y2" ]
+//  points = [ point_L, point_A, angle, point_end ]; point = [ "x1,y1", "r,r", "0", "x2,y2" ]
 function form_path_string(d) {
     const point_L = d["L"]          //   соединяется с центром
     const point_A = d["A"]          //   радиус
@@ -26,22 +26,6 @@ function form_path_string(d) {
     const point_end = d["END"]      //   конечная точка
 
     return `M ${CENTER} ${CENTER}, L ${point_L}, A ${point_A}, 0, 0, ${angle}, ${point_end}, Z`
-}
-
-//----------------------------------------тут задаются треугольник и четырехугольник
-let polygon_points = {
-    2: form_polygon_string([ZERO_ZERO, HALF_R_ZERO, ZERO_MINUS_R]),
-    3: form_polygon_string([ZERO_ZERO, ZERO_MINUS_HALF_R, `${CENTER - R}, ${CENTER + R / 2}`, MINUS_R_ZERO]),
-}
-
-//----------------------------------------тут задается четверть круга
-let path_points = {
-    1: form_path_string({
-        "L"     : HALF_R_ZERO,
-        "A"     : `${R / 2}, ${R / 2}`,
-        "ANGLE" : "0",
-        "END"   : ZERO_HALF_R
-    }),
 }
 
 //  функция отрисовки графика
