@@ -2,7 +2,7 @@ body {
     background-color: #24190f;
 }
 
-#header, #contentLeft, #contentRight, #contentCenter {
+#header, #content_left, #content_right, #content_center {
     margin-bottom: 5px;
 }
 
@@ -17,7 +17,7 @@ div#container div {
     background: #f0e5db;
 }
 
-#contentLeft, #contentRight {
+#content_left, #content_right {
     width: 50%;
     height: 300px;
 }
@@ -31,7 +31,7 @@ div#container div {
     text-align: center;
 }
 
-#contentRight {
+#content_right {
     float: right;
 
     display: flex;
@@ -39,11 +39,11 @@ div#container div {
     justify-content: center;
 }
 
-#contentLeft {
+#content_left {
     float: left;
 }
 
-#contentCenter {
+#content_center {
     width: 100%;
     height: auto;
     clear: both;
@@ -80,7 +80,7 @@ form {
     margin-top: 25px
 }
 
-.formLine {
+.form_line {
     float: left;
     margin-left: 85px;
     width: 100%;
