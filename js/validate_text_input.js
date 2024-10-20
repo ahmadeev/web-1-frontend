@@ -14,7 +14,7 @@ function disableButton() {
 
 //  провалидировать значения полей, разблокировать кнопку 'submit' в случае правильных значений
 //  работает от изменений в форме
-function pupu() {
+function validateInputFields() {
     var submitButton = form.querySelector('#submitButton');
     var xInput = form.querySelector('input[name="xType"]:checked').value;
     var yInput = form.querySelector('[name="yType"]').value;
@@ -37,4 +37,4 @@ function pupu() {
 }
 
 const form = document.getElementById("form")
-form.onchange = function() {pupu()};
+form.onchange = function() {validateInputFields()};
