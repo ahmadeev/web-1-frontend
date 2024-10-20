@@ -1,6 +1,6 @@
 //  очистить сессию и таблицу, заблокировать кнопку 'submit'
 //  применена к кнопке 'reset'
-function disableButton() {
+function resetButtonHandler() {
     var submitButton = form.querySelector('#submitButton');
     submitButton.setAttribute("disabled", "")
     window.localStorage.clear()
