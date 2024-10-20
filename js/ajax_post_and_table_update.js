@@ -39,7 +39,7 @@ $("#form").on("submit", function(){
     var yValue = form.querySelector('[name="yType"]').value;
 
     for (var i of RValue) {
-        var data = {'xType': xValue, 'yType': yValue, 'RType': i}
+        var data = {'xType': xValue.replaceAll(",", "."), 'yType': yValue.replaceAll(",", "."), 'RType': i.replaceAll(",", ".")}
 
         $.ajax({
             url: '/fcgi-bin/server.jar',

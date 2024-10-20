@@ -17,7 +17,12 @@ function pupu() {
     var yInput = form.querySelector('[name="yType"]').value;
     var RInput = form.querySelector('input[name="RType"]:checked').value;
 
-    if (parseFloat(yInput) <= 3 && parseFloat(yInput) >= -5 && parseFloat(yInput) != null && parseInt(xInput) != null && parseInt(RInput) != null) {
+    if (yInput.match(/^-?\d+(?:[.,]\d+)?$/)
+        && parseFloat(yInput) <= 3
+        && parseFloat(yInput) >= -5
+        && parseFloat(yInput) != null
+        && parseInt(xInput) != null
+        && parseInt(RInput) != null) {
         submitButton.removeAttribute("disabled");
         
     } else {
