@@ -33,30 +33,23 @@ stringCounter = 1;
 $("#form").on("submit", function(){
     event.preventDefault();
 
-    var RValue = []
-    $("input:checkbox[name=RType]:checked").each(function(){
-        RValue.push($(this).val());
-    });
-
     var xValue = form.querySelector('input[name="xType"]:checked').value;
     var yValue = form.querySelector('[name="yType"]').value;
+    var RValue = form.querySelector('input[name="RType"]:checked').value;
 
-    for (var i of RValue) {
-        var data = {'xType': xValue.replaceAll(",", "."), 'yType': yValue.replaceAll(",", "."), 'RType': i.replaceAll(",", ".")}
+    var data = {'xType': xValue.replaceAll(",", "."), 'yType': yValue.replaceAll(",", "."), 'RType': RValue.replaceAll(",", ".")}
 
-        $.ajax({
-            url: '/fcgi-bin/server.jar',
-            method: 'post',
-            dataType: 'text',
-            data: data,
-            success: function(data){
-                //alert(data)
-                insert(data)        
-            },
-            error: (jqXHR, textStatus, errorThrown) => {
-                alert("При выполнении запроса произошла ошибка!");
-                console.log("Error: " + textStatus + ", " + errorThrown)
-            }
-        });
-    }
+    $.ajax({
+        url: '/fcgi-bin/server.jar',
+        method: 'post',
+        dataType: 'text',
+        data: data,
+        success: function(data){
+            insert(data)
+        },
+        error: (jqXHR, textStatus, errorThrown) => {
+            alert("При выполнении запроса произошла ошибка!");
+            console.log("Error: " + textStatus + ", " + errorThrown)
+        }
+    });
 });
