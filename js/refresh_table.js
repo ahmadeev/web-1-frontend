@@ -1,6 +1,6 @@
 //  восстановить таблицу из сессии
 //  применяется после перезагрузки страницы
-function afterRefresh() {
+function restoreTableAfterRefresh() {
     if (stringCounter == 1 && window.localStorage.getItem('stringCounter') != null) {
         var counter = window.localStorage.getItem('stringCounter')
         while (stringCounter < counter) {
@@ -26,6 +26,3 @@ function afterRefresh() {
         window.localStorage.setItem('stringCounter', stringCounter)
     }
 }
-
-afterRefresh();
-//window.onload = function() {afterRefresh();}

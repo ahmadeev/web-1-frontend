@@ -198,8 +198,3 @@ function create_path(svg, d, fill_color, stroke_color) {
 
     svg.appendChild(path);
 }
-
-window.onload = () => {
-    const svg = document.querySelector('svg')
-    draw_graph(svg, polygon_points, path_points)
-}
