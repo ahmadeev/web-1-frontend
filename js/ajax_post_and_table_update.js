@@ -17,10 +17,6 @@ function insert(data) {
     RValue.innerHTML = obj.R;
     isHit.innerHTML = obj.isHit;
 
-    // var currentDate = new Date()
-    // var currentTimeString = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds()
-    // currentTime.innerHTML = currentTimeString;
-
     currentTime.innerHTML = "" + obj.currentTime;
     scriptExecutionTime.innerHTML = "" + obj.scriptTime;
 
@@ -47,15 +43,16 @@ $("#form").on("submit", function(){
 
         $.ajax({
             url: '/fcgi-bin/server.jar',
-            method: 'get',
+            method: 'post',
             dataType: 'text',
             data: data,
             success: function(data){
-                alert(data)
+                //alert(data)
                 insert(data)        
             },
             error: (jqXHR, textStatus, errorThrown) => {
-                alert("Error: " + textStatus + ", " + errorThrown);
+                alert("При выполнении запроса произошла ошибка!");
+                console.log("Error: " + textStatus + ", " + errorThrown)
             }
         });
     }
