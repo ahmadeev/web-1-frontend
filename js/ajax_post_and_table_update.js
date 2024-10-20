@@ -1,3 +1,5 @@
+//  функция вставки строки (точки) в таблицу
+//  применяется успешного выполнения запроса к серверу
 function insert(data) {
     console.log("Начало выполнения функции вставки строки в таблицу")
     window.localStorage.setItem(stringCounter, data);
@@ -5,18 +7,17 @@ function insert(data) {
     var obj = JSON.parse(window.localStorage.getItem(stringCounter));
     var tableRow = document.getElementById('resultTable').insertRow(stringCounter);
 
-
     var xValue = tableRow.insertCell(0);
 	var yValue = tableRow.insertCell(1);
     var RValue = tableRow.insertCell(2);
     var isHit = tableRow.insertCell(3);
     var currentTime = tableRow.insertCell(4);
     var scriptExecutionTime = tableRow.insertCell(5);
+
     xValue.innerHTML = obj.x;
     yValue.innerHTML = obj.y;
     RValue.innerHTML = obj.R;
     isHit.innerHTML = obj.isHit;
-
     currentTime.innerHTML = "" + obj.currentTime;
     scriptExecutionTime.innerHTML = "" + obj.scriptTime;
 
@@ -27,6 +28,8 @@ function insert(data) {
 
 stringCounter = 1;
 
+//  ajax post запрос к серверу
+//  применяется по нажатии на кнопку 'submit'
 $("#form").on("submit", function(){
     event.preventDefault();
 

@@ -1,3 +1,5 @@
+//  очистить сессию и таблицу, заблокировать кнопку 'submit'
+//  применена к кнопке 'reset'
 function disableButton() {
     var submitButton = form.querySelector('#submitButton');
     submitButton.setAttribute("disabled", "")
@@ -8,9 +10,10 @@ function disableButton() {
         stringCounter = 1
         window.localStorage.setItem('stringCounter', stringCounter)
     }
-    
 }
 
+//  провалидировать значения полей, разблокировать кнопку 'submit' в случае правильных значений
+//  работает от изменений в форме
 function pupu() {
     var submitButton = form.querySelector('#submitButton');
     var xInput = form.querySelector('input[name="xType"]:checked').value;
@@ -19,7 +22,7 @@ function pupu() {
 
     if (yInput.match(/^-?\d+(?:[.,]\d+)?$/)
         && parseFloat(yInput) <= 3
-        && parseFloat(yInput) >= -5
+        && parseFloat(yInput) >= -3
         && parseFloat(yInput) != null
         && parseInt(xInput) != null
         && parseInt(RInput) != null) {

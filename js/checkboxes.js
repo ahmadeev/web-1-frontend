@@ -1,4 +1,4 @@
-//  checkboxes as radio buttons
+//  чекбоксы работают как radio button
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
